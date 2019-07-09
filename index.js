@@ -21,7 +21,7 @@ const Keys = require('./keys.js');
 const bot = new Discord.Client();
 const token = Keys.token;
 
-const version = '1.0.0';
+const version = '1.0.1';
 const PREFIX = '`';
 
 bot.on('ready', () => {
@@ -30,12 +30,29 @@ bot.on('ready', () => {
 
 
 bot.on('message', message => {
+    let arr1 = message.content.split("");
     let content = message.content.substring(PREFIX.length);
-    let arr = content.split("");
-    if (arr.every(checkPrefix)){
-        switch(content){
+    let arr2 = content.split("");
+    let args = content.split(" ");
+    if (arr1[0] == '`' && arr2.every(checkPrefix)){
+        console.log(args)
+        switch(args[0]){
             case 'version':
             message.reply(version);
+            break;
+            case 'id':
+            message.reply(message.author.id);
+            break;
+            case 'sweta':
+            let channel = message.channel;
+            let string = '';
+            if(args[1]){
+                string += args[1];
+            }
+            channel.send(string + ' tfti');
+            break;
+            default:
+            message.reply('Command not recognized');
             break;
         }
     }
