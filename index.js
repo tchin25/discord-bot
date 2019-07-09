@@ -4,7 +4,7 @@
 const Discord = require('discord.js');
 //Required to access database
 const Database = require('sqlite3');
-const Database = require('database.js');
+//const Database = require('database.js');
 //Required to make REST calls
 const Https = require('http');
 //Required to login to bot
@@ -30,8 +30,20 @@ bot.on('ready', () => {
 
 
 bot.on('message', message => {
-    let args = message.content.toString;
+    let content = message.content.substring(PREFIX.length);
+    let arr = content.split("");
+    if (arr.every(checkPrefix)){
+        switch(content){
+            case 'version':
+            message.reply(version);
+            break;
+        }
+    }
 })
+
+function checkPrefix(char){
+    return char != PREFIX;
+}
 
 
 bot.login(token);
