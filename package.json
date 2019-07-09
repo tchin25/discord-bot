@@ -1,0 +1,23 @@
+{
+  "name": "discord-pokeroll-bot",
+  "version": "1.0.0",
+  "description": "A discord bot to replace the Pokemon rolling functionality of Mudae with better probabilities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tchin25/discord-pokeroll-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tchin25/discord-pokeroll-bot/issues"
+  },
+  "homepage": "https://github.com/tchin25/discord-pokeroll-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "sqlite3": "^4.0.9"
+  }
+}
