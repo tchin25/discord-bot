@@ -3,20 +3,11 @@
 //Required to access discord
 const Discord = require('discord.js');
 //Required to access database
-const Database = require('sqlite3');
-//const Database = require('database.js');
+const Database = require('./database.js');
 //Required to make REST calls
-const Https = require('http');
+const Fetch = require('node-fetch');
 //Required to login to bot
 const Keys = require('./keys.js');
-
-
-// let db = new sqlite3.Database('./db/users.db', (err) => {
-//   if (err) {
-//     console.error(err.message);
-//   }
-//   console.log('Connected to the users database.');
-// });
 
 const bot = new Discord.Client();
 const token = Keys.token;
@@ -63,3 +54,7 @@ function checkPrefix(char){
 
 
 bot.login(token);
+
+module.exports = {
+    P,
+}
