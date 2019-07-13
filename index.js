@@ -41,6 +41,9 @@ bot.on('message', message => {
                 }
                 channel.send(string + ' tfti');
             break;
+            case 'apiTest':
+                Database.generatePokemonTable();
+            break;
             default:
                 message.reply('Command not recognized');
             break;
@@ -54,7 +57,3 @@ function checkPrefix(char){
 
 
 bot.login(token);
-
-module.exports = {
-    P,
-}
