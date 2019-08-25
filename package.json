@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tchin25/discord-pokeroll-bot#readme",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "express": "^4.17.1",
     "node-fetch": "^2.6.0",
     "sqlite3": "^4.0.9"
   },

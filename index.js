@@ -1,4 +1,6 @@
 //Program starts here
+const express = require('express');
+const app = express();
 
 //Required to access discord
 const Discord = require('discord.js');
@@ -69,5 +71,12 @@ function checkPrefix(char){
     return char != PREFIX;
 }
 
-
 bot.login(token);
+
+app.get("/", (req, res) => {
+    res.send('bot is online');
+});
+
+app.listen(3000, () => {
+    console.log("Listening on port 3000...");
+});
