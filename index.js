@@ -21,8 +21,11 @@ bot.on('ready', () => {
 
 
 bot.on('message', message => {
+    
+
     let content = message.content.substring(PREFIX.length);
     let args = content.split(" ");
+    let channel = message.channel;
     //If message starts with prefix and doesn't have any prefix errors
     if (message.content.substring(0, PREFIX.length) == PREFIX && content.split("").every(checkPrefix)){
         console.log(args)
@@ -33,13 +36,24 @@ bot.on('message', message => {
             case 'id':
                 message.reply(message.author.id);
             break;
+            case 'adult':
+                channel.send('I\'m an adult');
+            break;
+            case '12':
+                channel.send('https://media.discordapp.net/attachments/561610186666803221/561617548815106059/unknown.png?width=959&height=132');
+            break;
+            case 'plank':
+                channel.send('https://media.discordapp.net/attachments/552175172963139587/601247313456791562/VideoCapture_20181106-153057.jpg?width=941&height=530');
+            break;
             case 'sweta':
-                let channel = message.channel;
                 let string = '';
                 if(args[1]){
                     string += args[1];
                 }
                 channel.send(string + ' tfti');
+            break;
+            case 'perino':
+                channel.send('Oh Matt? (btw Matt is perino, i can use his first name because we are tight like that. yeah i know top players but its not a big deal to me lol)');
             break;
             case 'apiTest':
                 Database.generatePokemonTable();
